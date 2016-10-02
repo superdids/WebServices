@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="ubuntu" name="ws.hamandeggs.test.HamAndEggsTestClient" skipped="0" tests="1" time="3.408" timestamp="2016-10-02T16:08:01">
+<testsuite errors="0" failures="0" hostname="ubuntu" name="ws.hamandeggs.test.HamAndEggsTestClient" skipped="0" tests="1" time="0.747" timestamp="2016-10-02T19:04:22">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -42,7 +42,6 @@
     <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="os.name" value="Linux" />
-    <property name="test.class" value="ws.hamandeggs.test.HamAndEggsTestClient" />
     <property name="libs.beans-binding.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/beansbinding-1.2.1.jar" />
     <property name="libs.javaee-endorsed-api-7.0.maven-pom" value="" />
     <property name="ap.proc.none.internal" value="" />
@@ -64,7 +63,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ws.hamandeggs.test.HamAndEggsTestClient skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/results/TEST-ws.hamandeggs.test.HamAndEggsTestClient.xml crashfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junitvmwatcher4652466637063600262.properties propsfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junit3934658370336401936.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ws.hamandeggs.test.HamAndEggsTestClient skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/results/TEST-ws.hamandeggs.test.HamAndEggsTestClient.xml crashfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junitvmwatcher3932644434485669957.properties propsfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junit4375600438921537134.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="ap.supported.internal" value="true" />
@@ -86,6 +85,7 @@
     <property name="libs.jsp-compilation-syscp.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/glassfish-jspparser-4.0.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/jstl-impl.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/jsf-2_2/javax.faces.jar" />
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed" />
     <property name="libs.Comet-GlassFish-v3.maven-pom" value="" />
+    <property name="test.includes" value="ws/hamandeggs/test/HamAndEggsTestClient.java" />
     <property name="netbeans.dynamic.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/org-openide-filesystems.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/core.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_pt_BR.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_zh_CN.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_ru.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_ja.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_zh_CN.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_pt_BR.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_ja.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_ru.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../soa/core/locale/core_soa.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/org-netbeans-upgrader.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/org-netbeans-upgrader_ja.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/org-netbeans-upgrader_zh_CN.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/core_nb_ru.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/org-netbeans-upgrader_ru.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/core_nb_zh_CN.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/core_nb.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/core_nb_ja.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/org-netbeans-upgrader_pt_BR.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/./../nb/core/locale/core_nb_pt_BR.jar" />
     <property name="java.vm.specification.version" value="1.8" />
     <property name="libs.hibernate4-support.src" value="" />
@@ -104,7 +104,7 @@
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="/" />
     <property name="libs.Java-EE-GlassFish-v3-Prelude.maven-pom" value="" />
-    <property name="javac.includesfile.binary" value="/home/superdids/NetBeansProjects/HamAndEggsClient/null1073066265" />
+    <property name="javac.includesfile.binary" value="/home/superdids/NetBeansProjects/HamAndEggsClient/null2064168469" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value=":build/classes:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar" />
@@ -119,7 +119,6 @@
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/docs/jaxb-api-doc.zip" />
     <property name="libs.struts.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/antlr-2.7.2.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/bsf-2.3.0.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-beanutils-1.8.0.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-chain-1.2.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-digester-1.8.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-fileupload-1.1.1.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-io-1.1.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-logging-1.0.4.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/commons-validator-1.3.1.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/jstl-1.0.2.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/oro-2.0.8.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/standard-1.0.6.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-core-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-el-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-extras-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-faces-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-mailreader-dao-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-scripting-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-taglib-1.3.10.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/struts/struts-tiles-1.3.10.jar" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="true" />
     <property name="javac.includes.binary" value="/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/classes/ws/hamandeggs/test/HamAndEggsTestClient.class" />
     <property name="ant.home" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant" />
     <property name="libs.junit_4.src" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/docs/junit-4.10-sources.jar" />
@@ -156,7 +155,7 @@
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.spring-framework300.maven-pom" value="" />
     <property name="run.test.classpath" value=":build/classes:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar:build/test/classes" />
-    <property name="ant.project.invoked-targets" value="debug-test" />
+    <property name="ant.project.invoked-targets" value="test-single" />
     <property name="libs.Encoder-Framework.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/encoderframework.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/encoderfrmwk-xsdextension.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/xbean.jar" />
     <property name="test.binaryexcludes" value="" />
     <property name="libs.swing-layout.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/docs/swing-layout-1.0.4-doc.zip" />
@@ -166,7 +165,6 @@
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
     <property name="java.class.version" value="52.0" />
     <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="/usr/lib/jvm/java-8-oracle/db/lib/derby.jar:/usr/lib/jvm/java-8-oracle/db/lib/derbyclient.jar:/usr/lib/jvm/java-8-oracle/db/lib/derbynet.jar" />
-    <property name="jpda.address" value="localhost:42211" />
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
     <property name="libs.javaee-endorsed-api-6.0.src" value="" />
     <property name="libs.eclipselink.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
@@ -288,8 +286,8 @@
     <property name="javadoc.version" value="false" />
     <property name="libs.MySQLDriver.javadoc" value="" />
     <property name="org.openide.version" value="deprecated" />
-    <property name="source.encoding" value="UTF-8" />
     <property name="platform.java" value="/usr/lib/jvm/java-8-oracle/jre/bin/java" />
+    <property name="source.encoding" value="UTF-8" />
     <property name="ap.cmd.line.internal" value="" />
     <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
     <property name="libs.jsp-compilation-syscp.javadoc" value="" />
@@ -325,8 +323,8 @@
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="libs.Encoder-Framework.maven-pom" value="" />
-    <property name="libs.jpa2-persistence.src" value="" />
     <property name="annotation.processing.enabled" value="true" />
+    <property name="libs.jpa2-persistence.src" value="" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.jsf12.src" value="" />
@@ -351,17 +349,17 @@
     <property name="libs.junit_4.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
-    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="libs.JAVADB_DRIVER_LABEL.javadoc" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="netbeans.dirs" value="./../soa:./../extide:./../apisupport:./../enterprise:./../ergonomics:./../harness:./../ide:./../java:./../nb:./../profiler:./../webcommon:./../websvccommon:" />
-    <property name="libs.jstl.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
     <property name="libs.jsf20.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
+    <property name="libs.jstl.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext" />
     <property name="libs.metro.src" value="" />
     <property name="libs.absolutelayout.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.metro.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/jaxb/activation.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-api.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-rt.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
+    <property name="libs.metro.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/jaxb/activation.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-api.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-rt.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.jpa2-persistence.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="java.class.path" value="/home/superdids/NetBeansProjects/HamAndEggsClient/build/classes:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar:/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/classes:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-launcher.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-junit.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
@@ -371,17 +369,17 @@
     <property name="application.args" value="" />
     <property name="libs.EclipseLink-GlassFish-v3.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
     <property name="libs.javaee-api-7.0.maven-pom" value="" />
-    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="main.class.available" value="true" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="sun.desktop" value="gnome" />
     <property name="libs.PojoSELib.maven-pom" value="" />
-    <property name="libs.hibernate4-persistence.src" value="" />
     <property name="compile.on.save.unsupported.jaxws" value="true" />
+    <property name="libs.hibernate4-persistence.src" value="" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="libs.Comet-GlassFish-v3.src" value="" />
     <property name="libs.restlib.javadoc" value="" />
     <property name="libs.JAXB-ENDORSED.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/jaxb/api/jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="debug.test.single" />
+    <property name="nb.internal.action.name" value="run.single" />
     <property name="libs.javaee-api-7.0.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
     <property name="libs.eclipselink.classpath" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/eclipselink/eclipselink.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/eclipselink/javax.persistence_2.1.0.v201304241213.jar:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="libs.beans-binding.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/docs/beansbinding-1.2.1-doc.zip" />
@@ -417,7 +415,7 @@
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="ws.hamandeggs.test.HamAndEggsTestClient" name="testHamAndEggs" time="3.145" />
+  <testcase classname="ws.hamandeggs.test.HamAndEggsTestClient" name="testHamAndEggs" time="0.627" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

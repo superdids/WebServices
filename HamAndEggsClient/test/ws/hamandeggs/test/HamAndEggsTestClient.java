@@ -21,11 +21,13 @@ public class HamAndEggsTestClient {
     
     @Test
     public void testHamAndEggs() {
-        boolean result = hamandeggsOperation(3);
-        assertEquals(result, true);
+        int result = hamandeggsOperation(4);
+        assertEquals(result, 2);
     }
     
-    private static boolean hamandeggsOperation(int n) {
+ 
+
+    private static int hamandeggsOperation(int n) {
         org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsService service = new org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsService();
         org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsPortType port = service.getHamandeggsPort();
         return port.hamandeggsOperation(n);
