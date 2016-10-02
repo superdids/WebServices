@@ -1,0 +1,7 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ham="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs">
+  <soapenv:Body>
+    <ham:hamandeggsOperation>
+      <n>3</n>
+    </ham:hamandeggsOperation>
+  </soapenv:Body>
+</soapenv:Envelope>
