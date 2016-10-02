@@ -23,11 +23,11 @@ public interface HamandeggsPortType {
      * 
      * @param n
      * @return
-     *     returns int
+     *     returns boolean
      */
     @WebMethod
-    @WebResult(name = "eggs", partName = "eggs")
-    public int hamandeggsOperation(
+    @WebResult(name = "result", partName = "result")
+    public boolean hamandeggsOperation(
         @WebParam(name = "n", partName = "n")
         int n);
 

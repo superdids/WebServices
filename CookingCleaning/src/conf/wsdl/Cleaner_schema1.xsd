@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://cookingcleaning.dtu.dk/" xmlns:tns="http://cookingcleaning.dtu.dk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ventilateAir" nillable="true" type="tns:ventilateAir"/>
+
+  <xs:element name="ventilateAirResponse" nillable="true" type="tns:ventilateAirResponse"/>
+
+  <xs:element name="washDishes" nillable="true" type="tns:washDishes"/>
+
+  <xs:element name="washDishesResponse" nillable="true" type="tns:washDishesResponse"/>
+
+  <xs:complexType name="ventilateAir">
+    <xs:sequence>
+      <xs:element name="seconds" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ventilateAirResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="washDishes">
+    <xs:sequence>
+      <xs:element name="dishes" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="washDishesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

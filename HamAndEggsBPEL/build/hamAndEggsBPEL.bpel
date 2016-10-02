@@ -11,19 +11,33 @@
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
     xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
     <import namespace="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" location="hamandeggs.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/CleanerWrapper" location="CleanerWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://cookingcleaning.dtu.dk/" location="http://localhost:8080/CookingCleaning/Cleaner?wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://enterprise.netbeans.org/bpel/CleanerWrapper" partnerLinkType="tns:CleanerLinkType" partnerRole="CleanerRole"/>
         <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" partnerLinkType="tns:hamandeggs" myRole="hamandeggsPortTypeRole"/>
     </partnerLinks>
     <variables>
+        <variable name="WashDishesOut" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:washDishesResponse"/>
+        <variable name="WashDishesIn" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:washDishes"/>
+        <variable name="VentilateAirOut" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:ventilateAirResponse"/>
+        <variable name="VentilateAirIn" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:ventilateAir"/>
         <variable name="HamandeggsOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" messageType="tns:hamandeggsOperationResponse"/>
         <variable name="HamandeggsOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" messageType="tns:hamandeggsOperationRequest"/>
     </variables>
     <sequence>
         <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="hamandeggsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" portType="tns:hamandeggsPortType" variable="HamandeggsOperationIn"/>
-        <assign name="Assign1">
+        <assign name="Assign2">
             <copy>
                 <from variable="HamandeggsOperationIn" part="n"/>
-                <to variable="HamandeggsOperationOut" part="eggs"/>
+                <to>$WashDishesIn.parameters/dishes</to>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="PartnerLink2" operation="washDishes" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cleaner" inputVariable="WashDishesIn" outputVariable="WashDishesOut"/>
+        <assign name="Assign1">
+            <copy>
+                <from>$WashDishesOut.parameters/return</from>
+                <to variable="HamandeggsOperationOut" part="result"/>
             </copy>
         </assign>
         <reply name="Reply1" partnerLink="PartnerLink1" operation="hamandeggsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" portType="tns:hamandeggsPortType" variable="HamandeggsOperationOut"/>

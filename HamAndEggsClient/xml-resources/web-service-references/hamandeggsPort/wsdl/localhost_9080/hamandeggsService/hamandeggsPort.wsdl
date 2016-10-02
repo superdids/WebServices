@@ -7,7 +7,7 @@
     </part>
   </message>
   <message name="hamandeggsOperationResponse">
-    <part name="eggs" type="xsd:int">
+    <part name="result" type="xsd:boolean">
     </part>
   </message>
   <portType name="hamandeggsPortType">

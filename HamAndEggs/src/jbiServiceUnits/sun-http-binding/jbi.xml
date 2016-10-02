@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" xmlns:ns2="http://enterprise.netbeans.org/bpel/HamAndEggsBPEL/hamAndEggsBPEL" version="1.0">
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" xmlns:ns2="http://enterprise.netbeans.org/bpel/HamAndEggsBPEL/hamAndEggsBPEL" xmlns:ns3="http://cookingcleaning.dtu.dk/" version="1.0">
     <services binding-component="true">
+        <provides endpoint-name="CleanerPort" interface-name="ns3:Cleaner" service-name="ns3:Cleaner"/>
         <consumes endpoint-name="hamandeggsPort" interface-name="ns1:hamandeggsPortType" service-name="ns1:hamandeggsService"/>
     </services>
 </jbi>
