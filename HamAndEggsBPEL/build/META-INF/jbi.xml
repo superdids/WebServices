@@ -11,5 +11,10 @@
             <ns3:process-name>hamAndEggsBPEL</ns3:process-name>
             <ns3:file-path>hamAndEggsBPEL.bpel</ns3:file-path>
         </consumes>
+        <consumes endpoint-name="CookRole_partnerRole" interface-name="ns1:Cook" service-name="ns0:PartnerLink3">
+            <ns3:display-name>PartnerLink3</ns3:display-name>
+            <ns3:process-name>hamAndEggsBPEL</ns3:process-name>
+            <ns3:file-path>hamAndEggsBPEL.bpel</ns3:file-path>
+        </consumes>
     </services>
 </jbi>

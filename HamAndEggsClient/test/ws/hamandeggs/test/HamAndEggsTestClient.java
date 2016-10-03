@@ -22,7 +22,7 @@ public class HamAndEggsTestClient {
     @Test
     public void testHamAndEggs() {
         int result = hamandeggsOperation(4);
-        assertEquals(result, 2);
+        assertEquals(result, 4);
     }
     
  

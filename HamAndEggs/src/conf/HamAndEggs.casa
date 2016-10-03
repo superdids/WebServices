@@ -3,22 +3,30 @@
     <endpoints>
         <endpoint endpoint-name="hamandeggsPort" interface-name="ns1:hamandeggsPortType" name="endpoint1" service-name="ns1:hamandeggsService"/>
         <endpoint endpoint-name="CleanerPort" interface-name="ns2:Cleaner" name="endpoint2" service-name="ns2:Cleaner"/>
-        <endpoint display-name="PartnerLink1" endpoint-name="hamandeggsPortTypeRole_myRole" file-path="hamAndEggsBPEL.bpel" interface-name="ns1:hamandeggsPortType" name="endpoint3" process-name="hamAndEggsBPEL" service-name="ns3:PartnerLink1"/>
-        <endpoint display-name="PartnerLink2" endpoint-name="CleanerRole_partnerRole" file-path="hamAndEggsBPEL.bpel" interface-name="ns2:Cleaner" name="endpoint4" process-name="hamAndEggsBPEL" service-name="ns3:PartnerLink2"/>
+        <endpoint endpoint-name="CookPort" interface-name="ns2:Cook" name="endpoint3" service-name="ns2:Cook"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="hamandeggsPortTypeRole_myRole" file-path="hamAndEggsBPEL.bpel" interface-name="ns1:hamandeggsPortType" name="endpoint4" process-name="hamAndEggsBPEL" service-name="ns3:PartnerLink1"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="CleanerRole_partnerRole" file-path="hamAndEggsBPEL.bpel" interface-name="ns2:Cleaner" name="endpoint5" process-name="hamAndEggsBPEL" service-name="ns3:PartnerLink2"/>
+        <endpoint display-name="PartnerLink3" endpoint-name="CookRole_partnerRole" file-path="hamAndEggsBPEL.bpel" interface-name="ns2:Cook" name="endpoint6" process-name="hamAndEggsBPEL" service-name="ns3:PartnerLink3"/>
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="HamAndEggsBPEL.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="HamAndEggs-HamAndEggsBPEL" unit-name="HamAndEggsBPEL" unknown="false" x="125" y="97">
-            <provides endpoint="endpoint3"/>
-            <consumes endpoint="endpoint4"/>
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="HamAndEggs-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="67" y="117">
+                <port x="67" y="197">
                     <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/hamandeggs.wsdl#xpointer(/definitions/service[@name='hamandeggsService']/port[@name='hamandeggsPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
                 </port>
                 <port x="67" y="37">
+                    <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cook.wsdl#xpointer(/definitions/service[@name='Cook']/port[@name='CookPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="117">
                     <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cleaner.wsdl#xpointer(/definitions/service[@name='Cleaner']/port[@name='CleanerPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
@@ -27,19 +35,23 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint1" provider="endpoint3" state="unchanged"/>
-        <connection consumer="endpoint4" provider="endpoint2" state="unchanged"/>
+        <connection consumer="endpoint1" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint3" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint2" state="unchanged"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/hamandeggs.wsdl#xpointer(/definitions/portType[@name='hamandeggsPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cook.wsdl#xpointer(/definitions/portType[@name='Cook'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cleaner.wsdl#xpointer(/definitions/portType[@name='Cleaner'])" xlink:type="simple"/>
     </porttypes>
     <bindings>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/hamandeggs.wsdl#xpointer(/definitions/binding[@name='hamandeggsBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cook.wsdl#xpointer(/definitions/binding[@name='CookPortBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cleaner.wsdl#xpointer(/definitions/binding[@name='CleanerPortBinding'])" xlink:type="simple"/>
     </bindings>
     <services>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/hamandeggs.wsdl#xpointer(/definitions/service[@name='hamandeggsService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cook.wsdl#xpointer(/definitions/service[@name='Cook'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/HamAndEggsBPEL/localhost_8080/CookingCleaning/Cleaner.wsdl#xpointer(/definitions/service[@name='Cleaner'])" xlink:type="simple"/>
     </services>
     <regions>

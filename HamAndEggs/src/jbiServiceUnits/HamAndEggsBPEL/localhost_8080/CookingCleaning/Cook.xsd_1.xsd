@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://cookingcleaning.dtu.dk/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cookingcleaning.dtu.dk/">
+
+<xs:element name="EggSmellFault" type="tns:EggSmellFault"/>
+
+<xs:element name="bakeOmelet" type="tns:bakeOmelet"/>
+
+<xs:element name="bakeOmeletResponse" type="tns:bakeOmeletResponse"/>
+
+<xs:element name="breakEggs" type="tns:breakEggs"/>
+
+<xs:element name="breakEggsResponse" type="tns:breakEggsResponse"/>
+
+<xs:complexType name="breakEggs">
+<xs:sequence>
+<xs:element name="eggs" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="breakEggsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EggSmellFault">
+<xs:sequence>
+<xs:element name="faultInfo" type="tns:faultType" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="faultType">
+<xs:sequence>
+<xs:element name="detail" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bakeOmelet">
+<xs:sequence>
+<xs:element name="seconds" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bakeOmeletResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

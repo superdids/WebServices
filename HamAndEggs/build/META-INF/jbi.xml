@@ -31,6 +31,10 @@
                 <provider endpoint-name="hamandeggsPortTypeRole_myRole" service-name="ns2:PartnerLink1"/>
             </connection>
             <connection>
+                <consumer endpoint-name="CookRole_partnerRole" service-name="ns2:PartnerLink3"/>
+                <provider endpoint-name="CookPort" service-name="ns3:Cook"/>
+            </connection>
+            <connection>
                 <consumer endpoint-name="CleanerRole_partnerRole" service-name="ns2:PartnerLink2"/>
                 <provider endpoint-name="CleanerPort" service-name="ns3:Cleaner"/>
             </connection>
