@@ -9,7 +9,7 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://cookingcleaning.dtu.dk/">
     <import namespace="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" location="hamandeggs.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/CleanerWrapper" location="CleanerWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://cookingcleaning.dtu.dk/" location="http://localhost:8080/CookingCleaning/Cleaner?wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -21,7 +21,10 @@
         <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" partnerLinkType="tns:hamandeggs" myRole="hamandeggsPortTypeRole"/>
     </partnerLinks>
     <variables>
+        <variable name="VentilateAirOut1" messageType="ns0:ventilateAirResponse"/>
+        <variable name="VentilateAirIn1" messageType="ns0:ventilateAir"/>
         <variable name="VentilateAirOut" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:ventilateAirResponse"/>
+        <variable name="GoodEggs" type="xs:int"/>
         <variable name="VentilateAirIn" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:ventilateAir"/>
         <variable name="BakeOmeletOut" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:bakeOmeletResponse"/>
         <variable name="BakeOmeletIn" xmlns:tns="http://cookingcleaning.dtu.dk/" messageType="tns:bakeOmelet"/>
@@ -32,15 +35,46 @@
         <variable name="HamandeggsOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" messageType="tns:hamandeggsOperationResponse"/>
         <variable name="HamandeggsOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" messageType="tns:hamandeggsOperationRequest"/>
     </variables>
+    <faultHandlers>
+        <catchAll>
+            <sequence name="Sequence2">
+                <assign name="DecrementGoodEggs">
+                        <copy>
+                                <from>$GoodEggs - 1</from>
+                                    <to variable="GoodEggs"/>
+                            </copy>
+                    </assign>
+                    <assign name="PrepareVentilationDuration">
+                        <copy>
+                                <from>10</from>
+                                    <to>$VentilateAirIn1.parameters/seconds</to>
+                            </copy>
+                    </assign>
+                    <invoke name="GetRidOfBadSmell" partnerLink="PartnerLink2" operation="ventilateAir" portType="ns0:Cleaner" inputVariable="VentilateAirIn1" outputVariable="VentilateAirOut1"/>
+            </sequence>
+        </catchAll>
+    </faultHandlers>
     <sequence>
         <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="hamandeggsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" portType="tns:hamandeggsPortType" variable="HamandeggsOperationIn"/>
+        <assign name="InitializeGoodEggs">
+            <copy>
+                <from variable="HamandeggsOperationIn" part="n"/>
+                <to variable="GoodEggs"/>
+            </copy>
+        </assign>
         <assign name="Assign1">
             <copy>
-                <from>$HamandeggsOperationIn.n * 10</from>
-                <to variable="WashDishesIn" part="parameters"/>
+                <from variable="HamandeggsOperationIn" part="n"/>
+                <to>$WashDishesIn.parameters/dishes</to>
             </copy>
         </assign>
         <invoke name="Invoke1" partnerLink="PartnerLink2" operation="washDishes" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cleaner" inputVariable="WashDishesIn" outputVariable="WashDishesOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from>1</from>
+                <to>$BreakEggsIn.parameters/eggs</to>
+            </copy>
+        </assign>
         <forEach name="ForEach1" parallel="no" counterName="ForEach1Counter">
             <startCounterValue>0</startCounterValue>
             <finalCounterValue>$HamandeggsOperationIn.n</finalCounterValue>
@@ -49,33 +83,27 @@
             </completionCondition>
             <scope name="Scope1">
                 <sequence name="Sequence1">
-                    <assign name="Assign2">
-                        <copy>
-                            <from>1</from>
-                            <to>$BreakEggsIn.parameters/eggs</to>
-                        </copy>
-                    </assign>
-                    <invoke name="Invoke2" partnerLink="PartnerLink3" operation="breakEggs" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cook" inputVariable="BreakEggsIn" outputVariable="BreakEggsOut"/>
+                    <invoke name="Invoke2" partnerLink="PartnerLink3" operation="breakEggs" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cook" inputVariable="BreakEggsIn" outputVariable="BreakEggsOut"></invoke>
                 </sequence>
             </scope>
         </forEach>
         <assign name="Assign3">
             <copy>
-                <from>$HamandeggsOperationIn.n * 10</from>
+                <from>$GoodEggs * 10</from>
                 <to>$BakeOmeletIn.parameters/seconds</to>
             </copy>
         </assign>
         <invoke name="Invoke3" partnerLink="PartnerLink3" operation="bakeOmelet" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cook" inputVariable="BakeOmeletIn" outputVariable="BakeOmeletOut"/>
         <assign name="Assign4">
             <copy>
-                <from>$HamandeggsOperationIn.n * 10</from>
+                <from>$GoodEggs * 10</from>
                 <to>$VentilateAirIn.parameters/seconds</to>
             </copy>
         </assign>
         <invoke name="Invoke4" partnerLink="PartnerLink2" operation="ventilateAir" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cleaner" inputVariable="VentilateAirIn" outputVariable="VentilateAirOut"/>
         <assign name="Assign5">
             <copy>
-                <from variable="HamandeggsOperationIn" part="n"/>
+                <from variable="GoodEggs"/>
                 <to variable="HamandeggsOperationOut" part="result"/>
             </copy>
         </assign>

@@ -5,10 +5,13 @@
  */
 package dk.dtu.cookingcleaning.fault;
 
+import javax.xml.ws.WebFault;
+
 /**
  *
  * @author superdids
  */
+@WebFault(name="EggSmellFault")
 public class EggSmellFault extends Exception {
 
     private FaultType faultInfo;

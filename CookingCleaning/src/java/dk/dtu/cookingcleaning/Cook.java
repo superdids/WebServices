@@ -21,6 +21,8 @@ import javax.jws.WebParam;
 @WebService(serviceName = "Cook")
 public class Cook {
     
+    private static int eggCount = 0;
+    
     @WebMethod(operationName = "bakeOmelet")
     public boolean bakeOmelet(@WebParam(name = "seconds") int seconds) {
         System.out.println("Baking " + seconds / 10 + " omelets.");
@@ -28,9 +30,15 @@ public class Cook {
     }
 
     @WebMethod(operationName = "breakEggs")
-    public boolean breakEggs(@WebParam(name = "eggs") int eggs) { //throws EggSmellFault {
+    public boolean breakEggs(@WebParam(name = "eggs") int eggs) throws EggSmellFault {
         String suffix = eggs == 1 ? " egg." : "eggs.";
         System.out.println("Breaking " + eggs + suffix);
+        ++eggCount;
+        if(eggCount % 2 == 0) {
+            System.err.println("\tThe \"breakEggs(eggs)\" operation found a bad egg!");
+            FaultType faultInfo = new FaultType();
+            throw new EggSmellFault("Egg smells bad", faultInfo);
+        }
         return true;
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="ubuntu" name="ws.hamandeggs.test.HamAndEggsTestClient" skipped="0" tests="1" time="1.725" timestamp="2016-10-03T14:27:53">
+<testsuite errors="1" failures="0" hostname="ubuntu" name="ws.hamandeggs.test.HamAndEggsTestClient" skipped="0" tests="1" time="3.696" timestamp="2016-10-03T16:54:10">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -62,7 +62,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ws.hamandeggs.test.HamAndEggsTestClient skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/results/TEST-ws.hamandeggs.test.HamAndEggsTestClient.xml crashfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junitvmwatcher9095532330832554019.properties propsfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junit7352019197409373727.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ws.hamandeggs.test.HamAndEggsTestClient skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/superdids/NetBeansProjects/HamAndEggsClient/build/test/results/TEST-ws.hamandeggs.test.HamAndEggsTestClient.xml crashfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junitvmwatcher6936327097396864423.properties propsfile=/home/superdids/NetBeansProjects/HamAndEggsClient/build/junit669133026000409915.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="ap.supported.internal" value="true" />
@@ -103,7 +103,7 @@
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="/" />
     <property name="libs.Java-EE-GlassFish-v3-Prelude.maven-pom" value="" />
-    <property name="javac.includesfile.binary" value="/home/superdids/NetBeansProjects/HamAndEggsClient/null1597051697" />
+    <property name="javac.includesfile.binary" value="/home/superdids/NetBeansProjects/HamAndEggsClient/null221902246" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value=":build/classes:/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar" />
@@ -413,7 +413,21 @@
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/home/superdids/Documents/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="ws.hamandeggs.test.HamAndEggsTestClient" name="testHamAndEggs" time="1.587" />
+  <testcase classname="ws.hamandeggs.test.HamAndEggsTestClient" name="testHamAndEggs" time="3.517">
+    <error message="Client received SOAP Fault from server: BPCOR-6136: Sending errors for the pending requests in the process scope since, the process instance has completed Please see the server log to find more detail regarding exact cause of the failure." type="com.sun.xml.internal.ws.fault.ServerSOAPFaultException">com.sun.xml.internal.ws.fault.ServerSOAPFaultException: Client received SOAP Fault from server: BPCOR-6136: Sending errors for the pending requests in the process scope since, the process instance has completed Please see the server log to find more detail regarding exact cause of the failure.
+	at com.sun.xml.internal.ws.fault.SOAP11Fault.getProtocolException(SOAP11Fault.java:178)
+	at com.sun.xml.internal.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:124)
+	at com.sun.xml.internal.ws.client.sei.StubHandler.readResponse(StubHandler.java:238)
+	at com.sun.xml.internal.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:189)
+	at com.sun.xml.internal.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:276)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:104)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:77)
+	at com.sun.xml.internal.ws.client.sei.SEIStub.invoke(SEIStub.java:147)
+	at com.sun.proxy.$Proxy30.hamandeggsOperation(Unknown Source)
+	at ws.hamandeggs.test.HamAndEggsTestClient.hamandeggsOperation(HamAndEggsTestClient.java:33)
+	at ws.hamandeggs.test.HamAndEggsTestClient.testHamAndEggs(HamAndEggsTestClient.java:24)
+</error>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

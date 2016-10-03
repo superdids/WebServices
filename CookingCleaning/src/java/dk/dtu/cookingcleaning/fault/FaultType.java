@@ -10,8 +10,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "faultType")
+@XmlType(name = "FaultType", propOrder = {
+    "detail"
+})
 public class FaultType {
     
     @XmlElement(required = true)
