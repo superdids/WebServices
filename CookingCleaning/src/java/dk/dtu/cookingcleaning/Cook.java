@@ -7,6 +7,9 @@ package dk.dtu.cookingcleaning;
 
 import dk.dtu.cookingcleaning.fault.EggSmellFault;
 import dk.dtu.cookingcleaning.fault.FaultType;
+import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -18,6 +21,7 @@ import javax.jws.WebParam;
 @WebService(serviceName = "Cook")
 public class Cook {
 
+    private Semaphore lock = new Semaphore(1);
     private static int eggsBroken = 0;
     
     @WebMethod(operationName = "bakeOmelet")
@@ -28,6 +32,16 @@ public class Cook {
 
     @WebMethod(operationName = "breakEggs")
     public boolean breakEggs(@WebParam(name = "eggs") int eggs) throws EggSmellFault {
+        
+        try {
+            lock.acquire();
+            ++eggsBroken;
+            lock.release();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Cook.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         
         ++eggsBroken;
        

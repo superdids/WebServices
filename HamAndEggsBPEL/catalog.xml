@@ -3,4 +3,6 @@
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
     <system systemId="http://localhost:8080/CookingCleaning/Cleaner?wsdl" uri="src/localhost_8080/CookingCleaning/Cleaner.wsdl"/>
     <system systemId="http://localhost:8080/CookingCleaning/Cleaner?xsd=1" uri="src/localhost_8080/CookingCleaning/Cleaner.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CookingCleaning/Cook?wsdl" uri="src/localhost_8080/CookingCleaning/Cook.wsdl"/>
+    <system systemId="http://localhost:8080/CookingCleaning/Cook?xsd=1" uri="src/localhost_8080/CookingCleaning/Cook.xsd_1.xsd"/>
 </catalog>
