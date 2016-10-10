@@ -5,7 +5,7 @@
  */
 package dk.dtu.cookingcleaning;
 
-import dk.dtu.cookingcleaning.fault.EggSmellFault;
+import dk.dtu.cookingcleaning.fault.EggSmellException;
 import java.util.Arrays;
 import java.util.function.Predicate;
 import javax.jws.WebService;

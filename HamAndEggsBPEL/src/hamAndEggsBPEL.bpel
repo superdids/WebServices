@@ -9,7 +9,7 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://cookingcleaning.dtu.dk/">
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://cookingcleaning.dtu.dk/" xmlns:ns1="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
     <import namespace="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" location="hamandeggs.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/CleanerWrapper" location="CleanerWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://cookingcleaning.dtu.dk/" location="http://localhost:8080/CookingCleaning/Cleaner?wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -36,23 +36,27 @@
         <variable name="HamandeggsOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" messageType="tns:hamandeggsOperationRequest"/>
     </variables>
     <faultHandlers>
-        <catchAll>
-            <sequence name="Sequence2">
-                <assign name="DecrementGoodEggs">
-                        <copy>
-                                <from>$GoodEggs - 1</from>
-                                    <to variable="GoodEggs"/>
-                            </copy>
-                    </assign>
-                    <assign name="PrepareVentilationDuration">
-                        <copy>
-                                <from>10</from>
-                                    <to>$VentilateAirIn1.parameters/seconds</to>
-                            </copy>
-                    </assign>
-                    <invoke name="GetRidOfBadSmell" partnerLink="PartnerLink2" operation="ventilateAir" portType="ns0:Cleaner" inputVariable="VentilateAirIn1" outputVariable="VentilateAirOut1"/>
-            </sequence>
-        </catchAll>
+        <catch faultName="ns0:EggSmellFault" faultVariable="msg" faultMessageType="ns0:EggSmellFault">
+            <empty name="Empty1"/>
+        </catch>
+        <!--<catch faultName="ns0:EggSmellFault" faultVariable="msg" faultMessageType="ns0:EggSmellFault">
+                            <sequence name="Sequence2">
+                                <assign name="DecrementGoodEggs">
+                                        <copy>
+                                                <from>$GoodEggs - 1</from>
+                                                    <to variable="GoodEggs"/>
+                                            </copy>
+                                    </assign>
+                                    <assign name="PrepareVentilationDuration">
+                                        <copy>
+                                                <from>10</from>
+                                                    <to>$VentilateAirIn1.parameters/seconds</to>
+                                            </copy>
+                                    </assign>
+                                    <invoke name="GetRidOfBadSmell" partnerLink="PartnerLink2" operation="ventilateAir" portType="ns0:Cleaner" inputVariable="VentilateAirIn1" outputVariable="VentilateAirOut1"/>
+            
+                            </sequence>
+        </catch>-->
     </faultHandlers>
     <sequence>
         <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="hamandeggsOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/HamAndEggsBPEL/src/hamandeggs" portType="tns:hamandeggsPortType" variable="HamandeggsOperationIn"/>
@@ -83,7 +87,9 @@
             </completionCondition>
             <scope name="Scope1">
                 <sequence name="Sequence1">
-                    <invoke name="Invoke2" partnerLink="PartnerLink3" operation="breakEggs" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cook" inputVariable="BreakEggsIn" outputVariable="BreakEggsOut"></invoke>
+                    <invoke name="Invoke2" partnerLink="PartnerLink3" operation="breakEggs" xmlns:tns="http://cookingcleaning.dtu.dk/" portType="tns:Cook" inputVariable="BreakEggsIn" outputVariable="BreakEggsOut">
+                    
+                    </invoke>
                 </sequence>
             </scope>
         </forEach>

@@ -5,28 +5,35 @@
  */
 package dk.dtu.cookingcleaning.fault;
 
-import javax.xml.ws.WebFault;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-/**
- *
- * @author superdids
- */
-@WebFault(name="EggSmellFault")
-public class EggSmellFault extends Exception {
 
-    private FaultType faultInfo;
-
-    public EggSmellFault(String message, FaultType faultInfo) {
-        super(message);
-        this.faultInfo = faultInfo;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "FaultType", propOrder = {
+    "detail"
+})
+public class EggSmellFault {
+    
+    @XmlElement(required = true)
+    protected String detail;
+    
+    public EggSmellFault() {
+        detail = "eggSmellsBad";
     }
-
-    public EggSmellFault(String message, FaultType faultInfo, Throwable cause) {
-        super(message, cause);
-        this.faultInfo = faultInfo;
+    
+    public EggSmellFault(String detail) {
+        this.detail = detail;
     }
-
-    public FaultType getFaultInfo() {
-        return faultInfo;
+    
+    public String getDetail() {
+        return detail;
     }
+    
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }   
 }
+

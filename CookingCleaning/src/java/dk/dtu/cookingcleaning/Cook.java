@@ -5,8 +5,8 @@
  */
 package dk.dtu.cookingcleaning;
 
+import dk.dtu.cookingcleaning.fault.EggSmellException;
 import dk.dtu.cookingcleaning.fault.EggSmellFault;
-import dk.dtu.cookingcleaning.fault.FaultType;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,14 +30,14 @@ public class Cook {
     }
 
     @WebMethod(operationName = "breakEggs")
-    public boolean breakEggs(@WebParam(name = "eggs") int eggs) throws EggSmellFault {
+    public boolean breakEggs(@WebParam(name = "eggs") int eggs) throws EggSmellException {
         String suffix = eggs == 1 ? " egg." : "eggs.";
         System.out.println("Breaking " + eggs + suffix);
         ++eggCount;
         if(eggCount % 2 == 0) {
             System.err.println("\tThe \"breakEggs(eggs)\" operation found a bad egg!");
-            FaultType faultInfo = new FaultType();
-            throw new EggSmellFault("Egg smells bad", faultInfo);
+            EggSmellFault faultInfo = new EggSmellFault();
+            throw new EggSmellException("Egg smells bad", faultInfo);
         }
         return true;
     }

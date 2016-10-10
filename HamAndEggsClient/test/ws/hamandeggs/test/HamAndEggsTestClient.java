@@ -18,15 +18,12 @@ import static org.junit.Assert.*;
  */
 public class HamAndEggsTestClient {
 
-    
     @Test
     public void testHamAndEggs() {
         int result = hamandeggsOperation(4);
         assertEquals(result, 2);
     }
     
- 
-
     private static int hamandeggsOperation(int n) {
         org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsService service = new org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsService();
         org.netbeans.j2ee.wsdl.hamandeggsbpel.src.hamandeggs.HamandeggsPortType port = service.getHamandeggsPort();
