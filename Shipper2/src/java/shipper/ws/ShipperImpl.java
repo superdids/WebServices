@@ -18,7 +18,7 @@ public class ShipperImpl {
     public java.lang.String shipOrder(orderdata.CustomerType customer, orderdata.OrderType order) throws ShipOrderFailure {
         System.out.println(String.format("shipOrder(%s,%s)", customer.getName(),order.getId()));
         if (customer.getId().equals("2")) {
-            throw new ShipOrderFailure("Failure during shipping","Failure during shipping");
+            throw new ShipOrderFailure("Failure during shipping","shipment failed, payment refunded");
         }
         return "OK";
     }

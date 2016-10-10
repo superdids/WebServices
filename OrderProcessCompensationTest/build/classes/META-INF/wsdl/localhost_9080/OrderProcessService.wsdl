@@ -2,7 +2,7 @@
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="urn:orderData" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:orderProcess" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="orderProcess" targetNamespace="urn:orderProcess">
   <types>
     <xsd:schema targetNamespace="urn:orderProcess">
-            <xsd:import namespace="urn:orderData" schemaLocation="http://imm-nbhuba.lan:9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd"/>
+            <xsd:import namespace="urn:orderData" schemaLocation="http://ubuntu:9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd"/>
             <xsd:complexType name="resultType">
                 <xsd:sequence>
                     <xsd:element name="status" type="xsd:string"/>
@@ -81,7 +81,7 @@
   </binding>
   <service name="orderProcessService">
     <port binding="tns:orderPTBinding" name="orderPTBindingPort">
-      <soap:address location="http://imm-nbhuba.lan:9080/OrderProcessService"/>
+      <soap:address location="http://ubuntu:9080/OrderProcessService"/>
     </port>
   </service>
     <plnk:partnerLinkType name="orderProcess">

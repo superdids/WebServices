@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Order_QNAME = new QName("urn:orderData", "order");
     private final static QName _Creditcard_QNAME = new QName("urn:orderData", "creditcard");
     private final static QName _Customer_QNAME = new QName("urn:orderData", "customer");
+    private final static QName _Order_QNAME = new QName("urn:orderData", "order");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: orderdata
@@ -68,15 +68,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OrderType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "urn:orderData", name = "order")
-    public JAXBElement<OrderType> createOrder(OrderType value) {
-        return new JAXBElement<OrderType>(_Order_QNAME, OrderType.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CreditcardType }{@code >}}
      * 
      */
@@ -92,6 +83,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:orderData", name = "customer")
     public JAXBElement<CustomerType> createCustomer(CustomerType value) {
         return new JAXBElement<CustomerType>(_Customer_QNAME, CustomerType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OrderType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "urn:orderData", name = "order")
+    public JAXBElement<OrderType> createOrder(OrderType value) {
+        return new JAXBElement<OrderType>(_Order_QNAME, OrderType.class, null, value);
     }
 
 }

@@ -9,22 +9,22 @@
         <endpoint display-name="PartnerLink1" endpoint-name="shipperPortTypeRole_partnerRole" file-path="orderProcess.bpel" interface-name="ns1:shipperPortType" name="endpoint6" process-name="orderProcess" service-name="ns4:PartnerLink1"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="OrderProcessCompensation.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="OrderProcessCompensationApp-OrderProcessCompensation" unit-name="OrderProcessCompensation" unknown="false" x="105" y="97">
+        <service-engine-service-unit artifacts-zip="OrderProcessCompensation.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="OrderProcessCompensationApp-OrderProcessCompensation" unit-name="OrderProcessCompensation" unknown="false" x="88" y="97">
             <provides endpoint="endpoint4"/>
             <consumes endpoint="endpoint5"/>
             <consumes endpoint="endpoint6"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="OrderProcessCompensationApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="0" y="-1">
-                    <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/service[@name='bankService']/port[@name='bankPortTypeBindingPort'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint3"/>
-                    <provides endpoint="endpoint3"/>
-                </port>
                 <port state="deleted" x="0" y="-1">
                     <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/orderProcess.wsdl#xpointer(/definitions/service[@name='orderProcessService']/port[@name='orderPTBindingPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/service[@name='bankService']/port[@name='bankPortTypeBindingPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
                 </port>
                 <port state="deleted" x="0" y="-1">
                     <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/shipper.wsdl#xpointer(/definitions/service[@name='shipperService']/port[@name='shipperPortTypeBindingPort'])" xlink:type="simple"/>
@@ -40,18 +40,18 @@
         <connection consumer="endpoint5" provider="endpoint3" state="unchanged"/>
     </connections>
     <porttypes>
-        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/portType[@name='bankPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/orderProcess.wsdl#xpointer(/definitions/portType[@name='orderPT'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/portType[@name='bankPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/shipper.wsdl#xpointer(/definitions/portType[@name='shipperPortType'])" xlink:type="simple"/>
     </porttypes>
     <bindings>
-        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/binding[@name='bankPortTypeBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/orderProcess.wsdl#xpointer(/definitions/binding[@name='orderPTBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/binding[@name='bankPortTypeBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/shipper.wsdl#xpointer(/definitions/binding[@name='shipperPortTypeBinding'])" xlink:type="simple"/>
     </bindings>
     <services>
-        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/service[@name='bankService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/orderProcess.wsdl#xpointer(/definitions/service[@name='orderProcessService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/bank.wsdl#xpointer(/definitions/service[@name='bankService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/OrderProcessCompensation/shipper.wsdl#xpointer(/definitions/service[@name='shipperService'])" xlink:type="simple"/>
     </services>
     <regions>

@@ -16,6 +16,9 @@
         <partnerLink name="orderRequest" xmlns:tns="urn:orderProcess" partnerLinkType="tns:orderProcess" myRole="orderPTRole"/>
     </partnerLinks>
     <variables>
+        <variable name="PayOut1" messageType="ns0:payResponse"/>
+        <variable name="RefundCreditCardOut" messageType="ns3:refundCreditCardResponse"/>
+        <variable name="RefundCreditCardIn" messageType="ns3:refundCreditCardRequest"/>
         <variable name="DebitCreditCardOut" xmlns:tns="http://bank.ws" messageType="tns:debitCreditCardResponse"/>
         <variable name="DebitCreditCardIn" xmlns:tns="http://bank.ws" messageType="tns:debitCreditCardRequest"/>
         <variable name="ShipOrderOut" messageType="ns2:shipOrderResponse"/>
@@ -28,6 +31,42 @@
     <correlationSets>
         <correlationSet name="PaymentCorrelation" properties="ns0:CustomerId ns0:OrderId"/>
     </correlationSets>
+    <faultHandlers>
+        <catch faultName="ns2:fault1" faultMessageType="ns2:shipOrderFailure" faultVariable="orderFailer">
+            <sequence name="Sequence1">
+                <assign name="Assign6">
+                    <copy>
+                        <from variable="DebitCreditCardIn" part="customer"/>
+                        <to variable="RefundCreditCardIn" part="customer"/>
+                    </copy>
+                    <copy>
+                        <from variable="DebitCreditCardIn" part="creditcard"/>
+                        <to variable="RefundCreditCardIn" part="creditcard"/>
+                    </copy>
+                    <copy>
+                        <from variable="DebitCreditCardIn" part="amount"/>
+                        <to variable="RefundCreditCardIn" part="amount"/>
+                    </copy>
+                </assign>
+                <invoke name="Invoke3" partnerLink="PartnerLink2" operation="refundCreditCard" portType="ns3:bankPortType" inputVariable="RefundCreditCardIn" outputVariable="RefundCreditCardOut"/>
+                <assign name="Assign7">
+                    <copy>
+                        <from variable="orderFailer" part="part1"/>
+                        <to>$PayOut1.result/status</to>
+                    </copy>
+                    <copy>
+                        <from>$ReceiveOrderIn.customer/ns1:id</from>
+                        <to>$PayOut1.result/customemrID</to>
+                    </copy>
+                    <copy>
+                        <from>$ReceiveOrderIn.order/ns1:id</from>
+                        <to>$PayOut1.result/orderID</to>
+                    </copy>
+                </assign>
+                <reply name="Reply4" partnerLink="orderRequest" operation="pay" portType="ns0:orderPT" variable="PayOut1"/>
+            </sequence>
+        </catch>
+    </faultHandlers>
     <sequence>
         <receive name="ReceiveOrderRequest" createInstance="yes" partnerLink="orderRequest" operation="receiveOrder" portType="ns0:orderPT" variable="ReceiveOrderIn">
             <correlations>
@@ -68,7 +107,7 @@
                         <to variable="DebitCreditCardIn" part="amount"/>
                 </copy>
         </assign>
-        <invoke name="Invoke2" partnerLink="PartnerLink2" operation="debitCreditCard" portType="ns3:bankPortType" inputVariable="DebitCreditCardIn" outputVariable="DebitCreditCardOut"/>
+        <invoke name="Invoke2" partnerLink="PartnerLink2" operation="debitCreditCard" portType="ns3:bankPortType" inputVariable="DebitCreditCardIn" outputVariable="DebitCreditCardOut"></invoke>
         <assign name="Assign2">
             <copy>
                     <from variable="DebitCreditCardOut" part="result"/>

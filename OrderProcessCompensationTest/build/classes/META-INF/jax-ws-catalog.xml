@@ -12,6 +12,7 @@
     <system systemId="http://imm-nbhuba.imm.dtu.dk:9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd" uri="wsdl/imm-nbhuba.imm.dtu.dk_9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd"/>
     <system systemId="http://imm-nbhuba.lan:9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd" uri="wsdl/imm-nbhuba.lan_9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd"/>
     <system systemId="http://localhost:9080/OrderProcessService?wsdl" uri="wsdl/localhost_9080/OrderProcessService.wsdl"/>
+    <system systemId="http://ubuntu:9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd" uri="wsdl/ubuntu_9080/OrderProcessCompensationApp-sun-http-binding/OrderProcessCompensation/orderData.xsd"/>
 </catalog>
 
 
